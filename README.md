@@ -109,7 +109,7 @@ There's currently a discussion around what features the `.bc` file format should
 
 I'm excited to see the discussion become a bit more technical, as the current public survey is a fairly high-level list of desired attributes, and I hope to start engaging in those discussions much more soon.
 
-If implemented correctly, the .bc` file format should provide enough value that PROs benefit from adopting it themselves (by unifying their databases and simplifying coordination), while also allowing anyone to publish to the format, and ideally leaving the format extensible enough that payment distribution can eventually be automated in compliant music-players, at the protocol level.
+If implemented correctly, the `.bc` file format should provide enough value that PROs benefit from adopting it themselves (by unifying their databases and simplifying coordination), while also allowing anyone to publish to the format, and ideally leaving the format extensible enough that payment distribution can eventually be automated in compliant music-players, at the protocol level.
 
 
 
