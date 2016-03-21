@@ -107,89 +107,9 @@ Simple ledgers like Bitcoin would be the simplest, essentially being an address 
 
 There's currently a discussion around what features the `.bc` file format should have, and all music stake holders should take a moment to consider the features they would like in such a format.
 
+I'm excited to see the discussion become a bit more technical, as the current public survey is a fairly high-level list of desired attributes, and I hope to start engaging in those discussions much more soon.
 
-
-I actually have a few ideas on technical implementation for the Dot-Blockchain project, but I'm going to hold back here and save those for a later post, leaving this one as a high-level overview of implications.
-
-
-If implemented correctly, the .bc` file format should provide enough value that PROs benefit from adopting it themselves (by unifying their databases and simplifying coordination), while also allowing anyone to publish to the database, and ideally leaving the format extensible enough that payment distribution can eventually be automated in compliant music-players, at the protocol level.
-
-
-Without joining a PRO, a musician's music never gets on iTunes, Amazon, or Netflix. It never gets played in an airport, coffee shop, or on a radio station or streaming service.
-
-
-There's no *legal* reason these places won't play your music if they had your permission, but in a global economy, there is no easy way to personally ask each artist, negotiate terms, and pay a fee before playing their music. In this way, the role of the PRO essentially comes down to communicating terms and prices along the distribution chain, as well as legal enforcement.
-
-A coffee shop pays some license fee for some set of music, maybe from a single PRO, and since that's the only music they *know* they're legally safe to play, it's the only sensible choice for a company trying to keep everything above-board.
-
-If an artist wants to ensure maximal distribution, they might register with multiple PROs. If those PROs register the same song with a typo in the title, it's possible that someone buying the rights to that song later on (say, for a commercial) to end up having to pay the rights twice, just because of an accounting error, where these organizations are simply not perfect at coordinating information between each other.
-
-## Enter the Blockchain
-
-Blockchains are good at sharing public knowledge, and verifying exactly who submitted a particular action or piece of data. It's basically perfect for an intellectual property registry, because everyone who subscribes to the blockchain has a full copy of the entire catalog, in order, and can verify exactly who submitted each entry.
-
-This doesn't replace everything a PRO does. Without legal enforcement, IP rights are meaningless, and so that basic function of a PRO remains intact. Also when an artist has passed, the PRO serves a valuable function of serving their beneficiaries.
-
-What this *does* replace is one very complicated and hard problem that PROs deal with, which is coordinating rights knowledge globally.
-
-There needs to be a public discussion about how these rights should be communicated, and I'm not at all the first person to suggest this. I had the good fortune of getting to speak to Benji Rogers, who has put forth some specific proposals for a useful datatype, and has also opened a call for discussion on what other attributes that data type should include.
-
-I'll probably be chiming into those discussions soon,
-
-
-The simplest way an artist or their representative could start using the blockchain today would be to simply publish a "hash" (a short fingerprint) of each new song.
-
-There is still a place for actually enforcing royalties, which is a legal task, and represents a real value that artis
-
-PRO as a CA for publishing music rights.
-
-
-
-Especially when coupled with their distribution contracts limiting what can be played on streaming services, radios, airports, coffee shops, amazon, netflix, all sorts of spaces in all sorts of countries around the world, the PROs become the gatekeepers to music being not only distributable but really even very monetizable.
-
-While this exclusivity is frustrating to many, it's really impossible to argue that they do play a pretty fundamental role in the web of music payment, which is legal enforcement.
-
-Since intellectual property is a legal construct, as long as it is to be enforced, there will be armies of lawyers and webs of logistics to collect, period. This is the context in which I say the PRO is not going anywhere soon, and they can breathe a sigh of relief when hearing of blockchains, because their place in the world is safe.
-
-That said, blockchains *can* greatly simplify the role of the PRO, and this will probably both make life easier for PROs, as well as making their organizations slightly smaller.
-
-
-
-Anything else is simply asking your users to pay, and trusting them to abide by those terms.
-
-
-
-
-
-
-
-Rather than list all the different roles, I'm going to categorize them by their types of ownership in the finished product:
-
-### Direct Owners of the Work
-
-Some people in the production of a song will receive perpetual royalties on that song's sale.
-
-
-Today the average song you hear on your phone might consist of different people performing each of these roles, and surely more:
-
- - Composer
- - Songwriter
- - Musician
- - Singer
- - Booking Agent
- - Record Producer
- - Recording Technicians
- - Publishers
- - Record Companies
- - Streaming Services
- - Publisher's Rights Organizations (PROs)
-
-
-
-Each of these contributors will generally have their own terms, and I doubt they all take an equity cut of a recording in most cases.
-
-
-
+If implemented correctly, the .bc` file format should provide enough value that PROs benefit from adopting it themselves (by unifying their databases and simplifying coordination), while also allowing anyone to publish to the format, and ideally leaving the format extensible enough that payment distribution can eventually be automated in compliant music-players, at the protocol level.
 
 
 
