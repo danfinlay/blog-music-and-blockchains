@@ -111,26 +111,52 @@ I'm excited to see the discussion become a bit more technical, as the current pu
 
 If implemented correctly, the `.bc` file format should provide enough value that PROs benefit from adopting it themselves (by unifying their databases and simplifying coordination), while also allowing anyone to publish to the format, and ideally leaving the format extensible enough that payment distribution can eventually be automated in compliant music-players, at the protocol level.
 
+## Fair Remixes
 
+At the [2016 SXSW Music Hackathon](http://www.sxsw.com/music/conference/hackathon), some representatives from [ujo music](ujomusic.com) and [Consensys](https://consensys.net) and I helped a variety of teams develop blockchain based applications for music creators.
 
+One area of music production that had a lot of people excited was the ability to have rights for a song split up *per track*, allowing users to download the constituent `stem` files, including them in their own tracks, and potentially including its payment as a sub-license of the final song's payment.
 
+One team, [Raphaus](http://devpost.com/software/rap-haus),  had done a fair amount of market analysis, and found that there was a huge abundance of hip-hop producers who were completely eager to start participating in new ways of selling and buying independent beats.
 
+Another project, [MusiSign](http://devpost.com/software/future-forward-licensing) showed how YouTube licensing could be automated using similar blockchain-published rights.
 
+Long term, royalty payment contracts should absolutely be able to recursively divide portions of their payments to other contracts, according to their reliance on outside works.
 
+## The Road Ahead
 
+At the beginning of this article, I said that the fundamental ways the blockchain would affect the music industry were similar to other industries, but I've spent the whole article so far talking about recording rights distribution.
 
+So where does this start to resemble other blockchain organizations?
 
+Well if you use a platform like [ujo](http://ujomusic.com/) to divide the ownership of a track, you'll realize that the royalties are divided according to "shares".
 
+What if those shares were totally fungible, and could be traded freely? Artists could sell portions of their future rights for short-term gains. Artists could pre-sell shares in a future song to help cover recording costs. Artists could accept shares as concert tickets, or in exchange for merchandise.
 
+When ownership becomes more fluid, the line between band, manager, and fan begins to blur. Buying shares of your favorite band when they're small could ensure you have a seat at a packed concert when they're big, not to mention you could actually get residuals on songs you helped fund early on. If own shares in a song, you're not just a fan, you're actually a producer!
 
+Artists might choose to swap shares with other artists, or pool them into an organization to help cover medical expenses in case some of them fall on hard luck.
 
+## Conclusion
 
+I hope I've demonstrated how the blockchain could potentially streamline every step of the existing rights management process, as well as how in the longer term the blockchain allows the creation of very different economic structures.
 
+Going forward, I think care should be spent on these areas:
 
+ 1. Creating structures of verifiable registration on blockchains
+  - Will benefit from supporting structures, like sonic fingerprinting, and artist verification services.
+ 2. Creating interfaces to these public registries that industry incumbents are willing to adopt (like `dot-blockchain`).
+ 3. Integrating machine-readable rights formats.
+  - Should be able to declare a wide variety of conditions
+  - Should be able to integrate with existing payment methods
+  - Should be able to describe blockchain payment methods.
+  - Should be able to recursively delegate portions of payments to other rights contracts.
+ 4. Developing a suite of pre-made contracts for artists to use to publish their terms along with song registrations.
+ 5. Creating music clients that are compliant with these protocols once they are in place.
 
+It's easy to just start our own new thing for new artists, but if we want existing music to migrate to standards like these, there needs to be some care taken in the ways that existing rights holders are migrated.
 
+If this is done right, I do think it will be beneficial for virtually everyone involved.
 
-
-
-
+Please, share your own thoughts on what will be needed to make these emergent standards more readily adoptable. The fairer music industry awaits.
 
