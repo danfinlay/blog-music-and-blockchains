@@ -1,12 +1,14 @@
 # Blockchains and the Music Industry
 
-I've spent a good part of the last year working with and thinking about blockchains, and I just spent a solid week at SXSW talking to people of all sorts of perspectives within the music industry about how these tools could be beneficial to them.
+I just spent a solid week at SXSW talking to people of all sorts of perspectives within the music industry about how the blockchain could be beneficial to them.
 
-The fundamental ways that I expect the blockchain to benefit the music industry is actually surprisingly similar to just about every other industry, but probably driven by a specific set of those benefits, because they are the most beneficial features to the existing power structures in the industry.
+The fundamental ways that kept coming up were similar to just about every other industry, but with a few specific features needing emphasis to encourage initial adoption by the incumbent players.
 
-I'm going to start this article discussing the existing revenue models of the music industry, and how they could be augmented by blockchain technologies. I'm then going to build on those basic tools to demonstrate how powerful they actually are. By the end, I hope to leave you with a couple way-out possible futures, and hopefully a strong enough understanding that you can imagine your own.
+In this article, I'm going to start by discussing the existing revenue models of the recording industry and how they could be augmented by blockchain technologies.
 
-### A note on DRM
+I'm then going to build on those basic tools to demonstrate how powerful they actually are. By the end, I hope to leave you with a couple way-out possible futures, and hopefully a strong enough understanding that you can imagine your own, and contribute to the conversation as it's happening right now.
+
+## First, A Note on DRM
 
 When talking about publishing intellectual property rights on a blockchain, people inevitably get caught in a specific intellectual eddie that is rooted in the last hundred years of how the industry has operated.
 
@@ -20,19 +22,82 @@ Computers are no different. Either they receive the information or they don't. I
 
 The perfect implementation of DRM merely inconveniences piracy, making encouraged channels more appealing.
 
-The solutions I'll discuss do not solve perfect DRM, but they do simplify the process of creating a fair economy for music payments, that listeners can feel good about, artists can be compensated for, and so can everyone providing a valuable service along the way.
+The solutions I'll discuss do not solve DRM, but they do simplify the process of creating a fair economy for music payments that listeners can feel good about, artists can be compensated for, along with everyone providing a valuable service along the way.
 
-## The Current Recording Industry
+## The Recording Industry
 
-Let me apologize in advance, I'm not in the recording industry, I've just been talking to its members and attending talks by some of its members for the last week, pretty much nonstop. There are probably inaccuracies in this description, but I believe the general pattern (and in turn, the proposed solution) remains valuable.
+Right now, the recording industry and its rights collection arms are very complicated.
 
-The most complicated aspect of how Blockchains will affect the music industry is its interface with the industry's legal arms. Specifically with Publishing Rights Organizations, or PROs.
+In particular, the Performance Rights Organizations (PRO) are tasked with the huge burden of collecting rights payments internationally, and dividing those payments fairly among the content creators, publishers, distributors, etc.
 
-Currently PROs are the legal entities, technically nonprofits, that are responsible for collecting and distributing royalties among the artists according to their agreed terms and ownerships.
+These organizations naturally run into a wide variety of obstacles that come from managing such a huge network of connections, spread across six different companies.
 
-These organizations evoke some mixed feelings in a lot of people. Being a very exclusive six-company industry, it is notoriously hard for new organizations to gain foothold in the field, and they essentially represent the music that can be monetized!
+You've got database inconsistencies, accounting errors, issues finding rights holders, and sometimes [legal might gone astray](http://www.nytimes.com/1996/12/17/nyregion/ascap-asks-royalties-from-girl-scouts-and-regrets-it.html?pagewanted=all).
 
-Without joining a PRO, your music never gets on iTunes, Amazon, Netflix, never gets played in an airport, coffee shop, or on a radio station or streaming service.
+Many of these problems would be solved with a shared database that made it easy to verify who published a work first. This just happens to nicely describe a basic blockchain.
+
+### A Registry of Property
+
+The simplest version of an intellectual property registry written for the Ethereum blockchain would just give a person a way to register a song's hash with their identity, and the ability to verify they posted it first, and to prove how simple that is, [I implemented it in 16 lines of Solidity](https://github.com/flyswatter/ip-registry/blob/master/contracts/IpRegistry.sol). If taken to court, a blockchain registration like this should hold up as "prior art", proving a point in time the artist had the work in hand.
+
+Of course, this does not prevent someone from re-formatting a song and registering it with a different hash, and here I see an opportunity for a new industry to emerge.
+
+### PRO as Publication Authority
+
+In public-key encryption, you always know some data was sent to you and from a specific source, as long as you know you have their public key. To get these public keys, you get their key encrypted to you by a [Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority).
+
+The Certificate Authority (CA) is an intermediary service that helps verify a particular certificate, and I think in a blockchain-based registry, one fundamental service existing PRO-type organizations could provide would be forming themselves into a sort of **Publication Authority**, where they vouch for a particular registration, tag it publicly with metadata, and essentially make themselves legally responsible for the publication's veracity.
+
+While anyone could still publish music, a coffee shop might still prefer to play music that had been verified by a publication authority of some sort, which might do some kind of sonic fingerprinting against other songs in published registries to help ensure it is original.
+
+This is not to say that independent publication authorities could not arise, but it's a good example of how the types of services provided in the existing framework could transpose into a decentralized platform.
+
+### Royalty Distribution on the Blockchain
+
+Once you have an ecosystem for verifying the veracity of a published work's registration, you can link whatever information you want to that registry.
+
+The simplest additional feature would be that each registered work includes a link to its ownership rights and terms, which could be cryptographically verified, *which would be a big step forward*, but who wants to settle for one step forward?
+
+If the rights were published in a machine-readable format, you could automate your payment. If the rights were published as a blockchain contract, you wouldn't even have to.
+
+The [Ujo Music](http://ujomusic.com/) project demonstrates how easily payment distribution can happen when the payment rights are built into the protocol via a blockchain "smart-contract". On every purchase, the song's contract automatically divides the payment according to virtual "shares" that the contract defines.
+
+The [Monegraph](https://monegraph.com) project seems to have similar aims, and is highlighted in [the dot-blockchain paper](https://medium.com/cuepoint/how-the-blockchain-can-change-the-music-industry-part-2-c1fa3bdfa848#.hup3z6xl1).
+
+### Communicating Rights and Terms
+
+Either Ujo, Monegraph, or another company could define a blockchain contract that might become the next music registry, but since we can't know exactly what contract might take off as the one that everyone uses, we might instead focus on creating a standardized format for artists and publishers of their works to express their rights and intentions in the music file itself.
+
+[Benji Rogers's Dot Blockchain project](http://www.dotblockchain.info/) aims to create a public data standard for a music file to declare its rights and permissions alongside the music file itself. Without a central registry that is universally trusted, this makes it easy for someone posting music to express how to look up their terms, although if blockchain-based contracts become popular, this file format may become mostly a signed pointer to the protocol and contract, and so to me the interesting part of this format discussion is exactly what information is needed to express rights without assuming a format, in a way that makes it as widely adoptable as possible.
+
+The way I see it, a license file would be a collection of different terms, each of which include:
+
+ - What the use is
+ - What protocol to pay via
+ - The correct recipient address for this protocol
+ - The amount to pay
+
+This simple structure does not account for scaling type licenses, such as might account for the changing royalty when a thousand new people enter a venue where a song is playing, so the ideal protocol might provide a way to actually define dynamic portions of the license.
+
+In the `.bc` format, a music file would be packaged with enough metadata to collect rights information, and ideally allow payment distribution as well.
+
+
+
+The ideal solution should be a shared ledger, with the ability to express rights in any way the content creator chooses to.
+
+
+There's currently a discussion around what features the `.bc` file format should have, and all music stake holders should take a moment to consider the features they would like in such a format.
+
+
+
+I actually have a few ideas on technical implementation for the Dot-Blockchain project, but I'm going to hold back here and save those for a later post, leaving this one as a high-level overview of implications.
+
+
+If implemented correctly, the .bc` file format should provide enough value that PROs benefit from adopting it themselves (by unifying their databases and simplifying coordination), while also allowing anyone to publish to the database, and ideally leaving the format extensible enough that payment distribution can eventually be automated in compliant music-players, at the protocol level.
+
+
+Without joining a PRO, a musician's music never gets on iTunes, Amazon, or Netflix. It never gets played in an airport, coffee shop, or on a radio station or streaming service.
+
 
 There's no *legal* reason these places won't play your music if they had your permission, but in a global economy, there is no easy way to personally ask each artist, negotiate terms, and pay a fee before playing their music. In this way, the role of the PRO essentially comes down to communicating terms and prices along the distribution chain, as well as legal enforcement.
 
